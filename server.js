@@ -1,4 +1,3 @@
-
 // Dependencies
 const express = require("express")
 const app = express()
@@ -10,8 +9,6 @@ const PORT = process.env.PORT
 // Middlewares
 
 
-
-
 // Routes
 app.get("/api/fun-fact", async (req, res) => {
     try {
@@ -20,9 +17,7 @@ app.get("/api/fun-fact", async (req, res) => {
 
         // Transorm the data
         const transformedData = { fact: response.data.text }
-        //res.json(response.data.text)
         res.json(transformedData)
-        //console.log(transformedData)
     } catch (error) {
         if (error.response) {
             console.error('API Error:', error.response.status, error.response.data);
