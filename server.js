@@ -12,7 +12,9 @@ const PORT = process.env.PORT
 
 
 // Routes
-
+app.get("/api/fun-fact", (req, res) => {
+    res.send("This route will be responsible for fetching the data and sending it to the client.")
+})
 
 
 
