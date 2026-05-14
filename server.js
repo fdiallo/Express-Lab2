@@ -18,8 +18,11 @@ app.get("/api/fun-fact", async (req, res) => {
         //res.send("This route will be responsible for fetching the data and sending it to the client.")
         const response = await axios.get("https://uselessfacts.jsph.pl/api/v2/facts/random")
 
-        res.json(response.data)
-        console.log(response.data)
+        // Transorm the data
+        const transformedData = { fact: response.data.text }
+        //res.json(response.data.text)
+        res.json(transformedData)
+        //console.log(transformedData)
     } catch (error) {
         if (error.response) {
             console.error('API Error:', error.response.status, error.response.data);
@@ -30,8 +33,6 @@ app.get("/api/fun-fact", async (req, res) => {
         }
     }
 })
-
-
 
 
 // Port
